@@ -2,19 +2,19 @@
 public class inPlaceSorts {
 	public static void main(String[] args)
 	{
-		/*int[] testList = {4, 5, 2, 7, 1, -6};
+		int[] testList = {4, 5, 2};
 		insertionSort(testList);
 		for(int i = 0; i < testList.length; i++)
 		{
 			System.out.println(testList[i]);
-		}*/
+		}
 		
-		double[] testList2 = {4, 5, 2, 7, 1, -6};
+		/*double[] testList2 = {4, 5, 2, 7, 1, -6};
 		selectionSort(testList2);
 		for(int i = 0; i < testList2.length; i++)
 		{
 			System.out.println(testList2[i]);
-		}
+		}*/
 		
 		/*String[] testList3 = {"best", "apple", "ever", "eaten", "achoo"};
 		bubbleSort(testList3);
@@ -27,30 +27,24 @@ public class inPlaceSorts {
 	
 	public static void insertionSort(int[] list1)
 	{
-		//int index = 0;
-		boolean swap = false;
-		while(!swap)
+		for(int i = 0; i < list1.length-1; i++)
 		{
-			int numSwaps = 0;
-			for(int i = 0; i < list1.length; i++)
+			int value;
+			if(list1[i] > list1[i+1])
 			{
-				for(int j = i + 1; j < list1.length; j++)
+				value = list1[i];
+				list1[i] = list1[i+1];
+				list1[i+1] = value;
+			}
+			for(int j = i; j < 0; j--)
+			{
+				if(list1[j-1] > list1[j])
 				{
-					int value;
-					if(list1[i] > list1[j])
-					{
-						value = list1[j];
-						list1[j] = list1[i];
-						list1[i] = value;
-						numSwaps++;
-					}
-					
+					value = list1[j-1];
+					list1[j-1] = list1[j];
+					list1[j] = value;
 				}
-			}
-			if(numSwaps == 0)
-			{
-				swap = true;
-			}
+			} 
 		}
 	}
 	
@@ -78,7 +72,11 @@ public class inPlaceSorts {
 					list1[value] = min;
 					list1[minPos] = swap;
 					value++;
-				}	
+				}
+				else 
+				{
+					value++;
+				}
 			}
 		}
 	}
