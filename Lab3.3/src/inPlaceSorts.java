@@ -64,7 +64,7 @@ public class inPlaceSorts {
 				double swap;
 				double min = list1[i];
 				int minPos = i;
-				for(int j = i + 1; j < list1.length; j++)
+				for(int j = i; j < list1.length; j++)
 				{
 					if(min > list1[j])
 					{
