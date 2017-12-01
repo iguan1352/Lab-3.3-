@@ -2,7 +2,7 @@
 public class inPlaceSorts {
 	public static void main(String[] args)
 	{
-		int[] testList = {4, 5, 2};
+		int[] testList = {4, 5, 2, 6, -5};
 		insertionSort(testList);
 		for(int i = 0; i < testList.length; i++)
 		{
@@ -16,7 +16,7 @@ public class inPlaceSorts {
 			System.out.println(testList2[i]);
 		}*/
 		
-		/*String[] testList3 = {"best", "apple", "ever", "eaten", "achoo"};
+		/*String[] testList3 = {"best", "apple", "ever", "eaten", "achoo", sick};
 		bubbleSort(testList3);
 		for(int i = 0; i < testList3.length; i++)
 		{
@@ -35,16 +35,17 @@ public class inPlaceSorts {
 				value = list1[i];
 				list1[i] = list1[i+1];
 				list1[i+1] = value;
-			}
-			for(int j = i; j < 0; j--)
-			{
-				if(list1[j-1] > list1[j])
+				for(int j = i; j > 0; j--)
 				{
-					value = list1[j-1];
-					list1[j-1] = list1[j];
-					list1[j] = value;
-				}
-			} 
+					int value2;
+					if(list1[j-1] > list1[j])
+					{
+						value2 = list1[j-1];
+						list1[j-1] = list1[j];
+						list1[j] = value2;
+					}
+				} 
+			}
 		}
 	}
 	
